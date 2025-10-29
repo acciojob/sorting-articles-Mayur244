@@ -2,14 +2,13 @@
 
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
-function removeArticles(band) {
-	let reg = /^(a |an |the )/i;
-	return band.replace(reg, "");
+function removeArticles(str) {
+	return str.replace(/^(a |an |the )/i, '');
 }
 
 const sortedBands = bands.slice().sort((a, b) => {
-	const bandA = removeArticles(a).toLowerCase();
-	const bandB = removeArticles(b).toLowerCase();
+	let bandA = removeArticles(a).toLowerCase();
+	let bandB = removeArticles(b).toLowerCase();
 
 	if(bandA < bandB) return -1;
 	if(bandA > bandB) return 1;
