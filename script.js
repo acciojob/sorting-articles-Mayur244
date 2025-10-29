@@ -15,7 +15,7 @@ const sortedBands = bands.slice().sort((a, b) => {
 	return 0;
 })
 
-const list = document.getElementById("band");
+const list = document.getElementById("bands");
 
 sortedBands.forEach((band) => {
 	const li = document.createElement('li');
